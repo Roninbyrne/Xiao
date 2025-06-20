@@ -18,6 +18,7 @@ try:
     user_states_collection = db["user_states"]
     video_channels_collection = db["video_channels"]
     mongodb = db
+mongo_collection = db["clone"]
 
     logger.info("Connected to your Mongo Database.")
 except Exception as e:
