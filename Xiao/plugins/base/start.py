@@ -1,5 +1,5 @@
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 import config
 from Xiao import app
@@ -32,14 +32,17 @@ async def start_pm(client, message: Message):
         )
         await client.send_message(LOGGER_ID, log_text)
 
+    bot = await client.get_me()
+    bot_name = bot.first_name
+
     text = (
         f"<b>нєу {user.first_name}.\n"
-        f"๏ ɪᴍ 花 子 — ᴀ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ ɢᴀᴍᴇ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴛʜᴇ ᴄʟᴀꜱꜱɪᴄ ᴡᴇʀᴇᴡᴏʟꜰ ɢᴀᴍᴇ.\n"
-        f"๏ ᴛᴀᴘ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ꜱᴛᴀʀᴛᴇᴅ ᴏʀ ꜱᴇᴇ ᴄᴏᴍᴍᴀɴᴅꜱ.</b>"
+        f"๏ ɪᴍ {bot_name} — ᴀ ᴍᴜꜱɪᴄ ʙᴏᴛ ғᴜᴇʟᴇᴅ ʙʏ ᴍᴀɢɪᴄ, ʀʜʏᴛʜᴍ, ᴀɴᴅ ꜱᴏᴍᴇ ꜱᴇʀɪᴏᴜꜱ ʙᴀꜱꜱ.\n"
+        f"๏ ᴛᴀᴘ ᴀɴʏ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ᴘᴀʀᴛʏ ꜱᴛᴀʀᴛᴇʀ.</b>"
     )
 
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("➕ Add Me To Group ➕", url=f"https://t.me/{app.me.username}?startgroup=true")],
+        [InlineKeyboardButton("➕ Add Me To Group ➕", url=f"https://t.me/{bot.username}?startgroup=true")],
         [
             InlineKeyboardButton("Support Chat", url=config.SUPPORT_CHAT),
             InlineKeyboardButton("Support Channel", url=config.SUPPORT_CHANNEL)
@@ -48,7 +51,7 @@ async def start_pm(client, message: Message):
     ])
 
     await message.reply(
-        f"{text}\n\n<a href='{config.START_VIDEO}'>๏ ʟᴇᴛ'ꜱ ʙᴇɢɪɴ ᴛʜᴇ ʜᴜɴᴛ! 🐺</a>",
+        f"{text}\n\n<a href='{config.START_VIDEO}'>๏ ʟᴇᴛ'ꜱ ᴛᴜʀɴ ᴛᴀʙʟᴇꜱ ᴀɴᴅ ᴅʀᴏᴘ ʙᴇᴀᴛꜱ 🎧</a>",
         reply_markup=keyboard
     )
 
