@@ -15,6 +15,7 @@ MONGO_DB_URI = "mongodb+srv://Combobot:Combobot@combobot.4jbtg.mongodb.net/?retr
 
 # --------------------------------- #
 
+STATS_VIDEO = "https://unitedcamps.in/Images/file_5250.jpg"
 START_VIDEO = "https://i.ibb.co/nsyp67FS/Img2url-bot.jpg"
 HELP_MENU_VIDEO = "https://i.ibb.co/Z64Z3yCR/Img2url-bot.jpg"
 HELP_VIDEO_1 = "https://i.ibb.co/8gkx23jt/Img2url-bot.jpg"
@@ -25,7 +26,6 @@ HELP_VIDEO_4 = "https://unitedcamps.in/Images/file_11454.jpg"
 # --------------------------------- #
 
 LOGGER_ID = -1002059639505
-STATS_VIDEO = "https://unitedcamps.in/Images/file_5250.jpg"
 OWNER_ID = 7394132959
 
 # --------------------------------- #
