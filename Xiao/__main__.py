@@ -4,7 +4,7 @@ from pyrogram import idle
 from Xiao import LOGGER, app, start_bot
 from Xiao.plugins import ALL_MODULES
 from Xiao.core.chat_tracker import verify_groups_command
-from Xiao.core.userbot import restart_bots
+from Xiao.core.clone import restart_bots
 from config import OWNER_ID
 
 class DummyUser:
@@ -31,11 +31,11 @@ async def init():
     except Exception as e:
         LOGGER("Xiao").warning(f"⚠️ Failed to verify groups on startup: {e}")
 
-    LOGGER("Xiao").info("🚀 Xiao Userbot Started Successfully.")
+    LOGGER("Xiao").info("🚀 Xiao Music bot Started Successfully.")
     await idle()
 
     await app.stop()
-    LOGGER("Xiao").info("🛑 Stopping Xiao Userbot...")
+    LOGGER("Xiao").info("🛑 Stopping Xiao Music bot...")
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(init())
